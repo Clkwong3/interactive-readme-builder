@@ -1,120 +1,137 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path"); // the path module
 
 console.log("ReadMe Generator is running");
 
-// Generate the questions in inquirer
-// take out the questions and put it in const later
-inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "title",
-      message: "What is the title of the project?",
-    },
-    {
-      type: "input",
-      name: "description",
-      message: "Why is this project made? What does it do?",
-    },
-    {
-      // ask if user wants a table of contents
-      type: "confirm",
-      name: "includeTableOfContents",
-      message: "Do you want to include a table of contents?",
-      default: true,
-    },
-    {
-      type: "input",
-      name: "installation",
-      message: "What do users need to do to install this application?",
-    },
-    {
-      type: "input",
-      name: "usage",
-      message: "What are the instructions for using this application?",
-    },
-    {
-      // List of license
-      // could be checklist
-      type: "list",
-      name: "license",
-      message: "Which license was used?",
-      choices: [
-        "MIT",
-        "GPL",
-        "AGPL",
-        "LGPL",
-        "Apache",
-        "Mozilla Public",
-        "Boost Software",
-        "Unlicense",
-        "Unlisted",
-        "N/A",
-      ],
-    },
-    {
-      type: "input",
-      name: "contributors",
-      message: "Who has contributed to this project?",
-    },
-    {
-      type: "input",
-      name: "test",
-      message: "How can users test this application?",
-    },
-    {
-      type: "confirm",
-      name: "includeContactInfo",
-      message: "Want to add contact information? Type 'yes' or 'no'.",
-      default: true,
-    },
-    {
-      // should be fine to leave bottom two as is
-      type: "input",
-      name: "github",
-      message: "GitHub Account Name:",
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "Email Address:",
-    },
-  ])
-  .then((answers) => {
-    const {
-      // could bring it outside?
-      title,
-      description,
-      includeTableOfContents,
-      installation,
-      usage,
-      license,
-      contributors,
-      test,
-      github,
-      email,
-    } = answers;
-    // Redo the function. Don't like it
-    // Create the README content based on user's choices
+// The questions
+const questions = [
+  {
+    type: "input",
+    name: "title",
+    message: "What is the title of the project?",
+  },
+  {
+    type: "input",
+    name: "description",
+    message: "Why is this project made? What does it do?",
+  },
+  {
+    // ask if user wants a table of contents
+    name: "includeTableOfContents",
+    message: "Want to include a table of contents? Type 'yes' or 'no'.",
+    default: true,
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "What do users need to do to install this application?",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "What are the instructions for using this application?",
+  },
+  {
+    // Switch to checkbox
+    type: "checkbox",
+    name: "license",
+    message: "Select the license being used for this project.",
+    choices: [
+      "Apache 2.0",
+      "GNU GPL 3.0",
+      "MIT",
+      "BSD 2",
+      "BSD 3",
+      "Boost 1.0",
+      "CCZ 1.0",
+      "EPL 2",
+      "GNU AGPL 3.0",
+      "GNU LGPL 2.1",
+      "Mozilla 2.0",
+      "Unlicense",
+      "N/A",
+    ],
+  },
+  {
+    type: "input",
+    name: "contributors",
+    message: "Any contributors to this project?",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "How can users test this application?",
+  },
+  {
+    // ask if user wants a table of contents
+    type: "confirm",
+    name: "includeContactInfo",
+    message: "Want to add contact information? Type 'yes' or 'no'.",
+    default: true,
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "GitHub Account Name:",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Email Address:",
+  },
+];
 
-    // Add table of contents depending on user
-    let readmeContent = `# ${title}\n\n${description}\n\n`;
-    if (includeTableOfContents) {
-      readmeContent += "## Table of Contents\n\n";
+// Make the ReadMe based on user's answers
+function generateReadMe(answers) {
+  const {
+    title,
+    description,
+    includeTableOfContents,
+    installation,
+    usage,
+    license,
+    contributors,
+    test,
+    includeContactInfo,
+    github,
+    email,
+  } = answers;
+
+  let readmeContent = `# ${title}\n\n${description}\n\n`;
+
+  if (includeTableOfContents) {
+    readmeContent += "## Table of Contents\n\n";
+    // Add table of contents entries here
+  }
+
+  if (includeContactInfo) {
+    readmeContent += "## Contact\n\n";
+    if (github) {
+      readmeContent += `- GitHub: [@${github}](https://github.com/${github})\n`;
     }
-
-    // Add contact information depending on user
-    if (includeContactInfo) {
-      readmeContent += "## Contact\n\n";
-      if (github) {
-        readmeContent += `- GitHub: [@${github}](https://github.com/${github})\n`;
-      }
-      if (email) {
-        readmeContent += `- Email: ${email}\n`;
-      }
+    if (email) {
+      readmeContent += `- Email: ${email}\n`;
     }
+  }
 
-    // Log or write the generated README content
-    console.log(readmeContent);
+  return readmeContent;
+}
+
+// Ask and gather
+inquirer.prompt(questions).then((answers) => {
+  const readmeContent = generateReadMe(answers);
+
+  // Use path.join to specify where the README.md should be saved
+  // process.cwd() turns the current working directory as a string
+  const filePath = path.join(process.cwd(), "README.md");
+
+  // Write the generated README content to a file
+  fs.writeFile(filePath, readmeContent, (err) => {
+    if (err) {
+      console.error("Error while creating README.md:", err);
+    } else {
+      console.log("README.md created successfully!");
+    }
   });
+});
