@@ -10,6 +10,7 @@ function generateReadMe(answers) {
     github,
     email,
     license,
+    includeTableOfContents,
   } = answers;
 
   let licenseName = String(license).trim().replace(/\s+/g, "%20"); // replace white space with '%20
@@ -22,14 +23,19 @@ function generateReadMe(answers) {
   readmeContent += "## Description\n";
   readmeContent += `${description}\n\n`;
 
-  // Table of Contents
-  readmeContent += "## Table of Contents\n";
-  readmeContent += "- [Installation](#installation)\n";
-  readmeContent += "- [Usage](#usage)\n";
-  readmeContent += "- [Credits](#credits)\n";
-  readmeContent += "- [Test](#test)\n";
-  readmeContent += "- [Contact-Me](#contact-me)\n";
-  readmeContent += "- [License](#license)\n\n";
+  // Only include the table of contents if the user wants it (hopefully)
+  if (includeTableOfContents) {
+    // Table of Contents
+    let tableOfContents = "";
+    tableOfContents += "- [Installation](#installation)\n";
+    tableOfContents += "- [Usage](#usage)\n";
+    tableOfContents += "- [Credits](#credits)\n";
+    tableOfContents += "- [Test](#test)\n";
+    tableOfContents += "- [Contact-Me](#contact-me)\n";
+    tableOfContents += "- [License](#license)\n\n";
+
+    readmeContent += tableOfContents;
+  }
 
   // Installation
   readmeContent += "## Installation\n";
@@ -47,9 +53,18 @@ function generateReadMe(answers) {
   readmeContent += "## Test\n";
   readmeContent += `${test}\n\n`;
 
-  // Contact-Me
-  readmeContent += "## Contact-Me\n";
-  readmeContent += `If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](${email}) or my GitHub Account [${github}](https://github.com/${github}/).\n\n`;
+  // Contact-Me Section
+  let contactSection = "";
+  if (email || github) {
+    contactSection += "## Contact-Me\n";
+    if (email) {
+      contactSection += `If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](${email}).\n`;
+    }
+    if (github) {
+      contactSection += `You can also reach out to me on my GitHub Account [${github}](https://github.com/${github}/).\n`;
+    }
+    contactSection += "\n";
+  }
 
   // License
   readmeContent += "## License\n";

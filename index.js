@@ -20,6 +20,7 @@ function startPrompts() {
     },
     {
       // ask if user wants a table of contents
+      type: "confirm",
       name: "includeTableOfContents",
       message: "Want to include a table of contents?",
       default: true,
@@ -59,11 +60,13 @@ function startPrompts() {
       type: "input",
       name: "credits",
       message: "Any contributors to this project?",
+      when: (answers) => answers.includeTableOfContents, // Only when users want to include table of contents
     },
     {
       type: "input",
       name: "test",
       message: "How can users test this application?",
+      when: (answers) => answers.includeTableOfContents, // Only when users want to include table of contents
     },
     {
       // ask if user wants a table of contents
