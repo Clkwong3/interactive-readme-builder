@@ -84,5 +84,21 @@ inquirer
       git,
       email,
     },
+    createReadMe(),
   ]);
 // create a function to create the ReadMe Template
+
+// Create ReadMe using fs
+function createReadMe(fileName, data) {
+  fs.writeFile(
+    `./${fileName.toLowerCase().split("").join[""]}.md`,
+    data,
+    (err) => {
+      if (err) {
+        console.log("Error: ", err);
+      } else {
+        console.log("ReadMe has been created");
+      }
+    }
+  );
+}
