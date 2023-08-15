@@ -54,4 +54,11 @@ function generateReadMe(answers) {
   return readmeContent;
 }
 
+// Get the license badge img based on user's choice
+function licenseBadge(license) {
+  if (license !== "none") {
+    return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
+  }
+}
+
 module.exports = generateReadMe;
