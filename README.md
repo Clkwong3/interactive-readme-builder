@@ -12,10 +12,10 @@ Inquirer 8.2.4 and node.js
 install, run the script, answer the questions when prompt
 
 ## Credits
-undefined
+no
 
 ## Test
-undefined
+clone or fork the code from github, install dependencies, run and test for errors before following the instructions
 
 ## License
 All rights reserved. Licensed under the CCZ 1.0 license.
