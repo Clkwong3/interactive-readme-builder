@@ -64,6 +64,13 @@ inquirer
       message: "How can users test this application?",
     },
     {
+      type: "confirm",
+      name: "includeContactInfo",
+      message: "Want to add contact information? Type 'yes' or 'no'.",
+      default: true,
+    },
+    {
+      // should be fine to leave bottom two as is
       type: "input",
       name: "github",
       message: "GitHub Account Name:",
@@ -90,9 +97,24 @@ inquirer
     } = answers;
     // Redo the function. Don't like it
     // Create the README content based on user's choices
-    // Maybe need one for contacts?
+
+    // Add table of contents depending on user
     let readmeContent = `# ${title}\n\n${description}\n\n`;
     if (includeTableOfContents) {
       readmeContent += "## Table of Contents\n\n";
     }
+
+    // Add contact information depending on user
+    if (includeContactInfo) {
+      readmeContent += "## Contact\n\n";
+      if (github) {
+        readmeContent += `- GitHub: [@${github}](https://github.com/${github})\n`;
+      }
+      if (email) {
+        readmeContent += `- Email: ${email}\n`;
+      }
+    }
+
+    // Log or write the generated README content
+    console.log(readmeContent);
   });
