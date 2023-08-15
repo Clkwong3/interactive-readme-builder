@@ -1,29 +1,25 @@
 # ReadMe Generator
 
-![License](https://img.shields.io/badge/License--blue.svg)
+![License](https://img.shields.io/badge/License-BSD%202-blue.svg)
 
 ## Description
-Create a ReadMe based on user interaction
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [Test](#test)
-- [Contact-Me](#contact-me)
-- [License](#license)
+Interacts with the user to create a ReadMe
 
 ## Installation
-Inquirer 8.2.4 and node.js
+Inquirer 8.2.4 and Node.js
 
 ## Usage
-install, run the script, answer the questions when prompt
+Install the dependencies. Run the script. Answer the questions. Review and use the ReadMe.
 
 ## Credits
-n/a
+N/A
 
 ## Test
-clone or fork the code from github, install dependencies, run and test for errors before following the instructions
+Clone or fetch the repo. Install the dependencies. Run 'npm test' to verify that there are no errors. Use the application by following the instructions provided in the ReadMe.
+
+## Contact-Me
+If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](email@address.com).
+You can also reach out to me on my GitHub Account [accountName](https://github.com/accountName/).
 
 ## License
-All rights reserved. Licensed under the  license.
+All rights reserved. Licensed under the BSD 2 license.
