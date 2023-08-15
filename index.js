@@ -36,8 +36,7 @@ function startPrompts() {
       message: "What are the instructions for using this application?",
     },
     {
-      // Switch to checkbox
-      type: "checkbox",
+      type: "list",
       name: "license",
       message: "Select the license being used for this project.",
       choices: [
