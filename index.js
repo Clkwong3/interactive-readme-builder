@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path"); // the path module
+const generateReadMe = require("./generateReadMe");
 
 console.log("ReadMe Generator is running");
 
@@ -81,42 +82,6 @@ const questions = [
     message: "Email Address:",
   },
 ];
-
-// Make the ReadMe based on user's answers
-function generateReadMe(answers) {
-  const {
-    title,
-    description,
-    includeTableOfContents,
-    installation,
-    usage,
-    license,
-    contributors,
-    test,
-    includeContactInfo,
-    github,
-    email,
-  } = answers;
-
-  let readmeContent = `# ${title}\n\n${description}\n\n`;
-
-  if (includeTableOfContents) {
-    readmeContent += "## Table of Contents\n\n";
-    // Add table of contents entries here
-  }
-
-  if (includeContactInfo) {
-    readmeContent += "## Contact\n\n";
-    if (github) {
-      readmeContent += `- GitHub: [@${github}](https://github.com/${github})\n`;
-    }
-    if (email) {
-      readmeContent += `- Email: ${email}\n`;
-    }
-  }
-
-  return readmeContent;
-}
 
 // Ask and gather
 inquirer.prompt(questions).then((answers) => {
