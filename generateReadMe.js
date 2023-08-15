@@ -27,6 +27,7 @@ function generateReadMe(answers) {
   if (includeTableOfContents) {
     // Table of Contents
     let tableOfContents = "";
+    tableOfContents += "## Table of Contents\n";
     tableOfContents += "- [Installation](#installation)\n";
     tableOfContents += "- [Usage](#usage)\n";
     tableOfContents += "- [Credits](#credits)\n";

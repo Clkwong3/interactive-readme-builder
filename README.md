@@ -1,9 +1,17 @@
 # ReadMe Generator
 
-![License](https://img.shields.io/badge/License-CCZ%201.0-blue.svg)
+![License](https://img.shields.io/badge/License--blue.svg)
 
 ## Description
 Create a ReadMe based on user interaction
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Test](#test)
+- [Contact-Me](#contact-me)
+- [License](#license)
 
 ## Installation
 Inquirer 8.2.4 and node.js
@@ -12,10 +20,10 @@ Inquirer 8.2.4 and node.js
 install, run the script, answer the questions when prompt
 
 ## Credits
-no
+n/a
 
 ## Test
 clone or fork the code from github, install dependencies, run and test for errors before following the instructions
 
 ## License
-All rights reserved. Licensed under the CCZ 1.0 license.
+All rights reserved. Licensed under the  license.
