@@ -87,22 +87,27 @@ function startPrompts() {
   ];
 
   // Ask and gather
-  inquirer.prompt(questions).then((answers) => {
-    const readmeContent = generateReadMe(answers);
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      const readmeContent = generateReadMe(answers);
 
-    // Use path.join to specify where the README.md should be saved
-    // process.cwd() turns the current working directory as a string
-    const filePath = path.join(process.cwd(), "README.md");
+      // Use path.join to specify where the README.md should be saved
+      // process.cwd() turns the current working directory as a string
+      const filePath = path.join(process.cwd(), "README.md");
 
-    // Write the generated README content to a file
-    fs.writeFile(filePath, readmeContent, (err) => {
-      if (err) {
-        console.error("Error while creating README.md:", err);
-      } else {
-        console.log("README.md created successfully!");
-      }
+      // Write the generated README content to a file
+      fs.writeFile(filePath, readmeContent, (err) => {
+        if (err) {
+          console.error("Error while creating README.md:", err);
+        } else {
+          console.log("README.md created successfully!");
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("An error occurred:", error);
     });
-  });
 }
 // reset and start the prompts
 startPrompts();
