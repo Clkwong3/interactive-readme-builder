@@ -20,13 +20,13 @@ const questions = [
   {
     // ask if user wants a table of contents
     name: "includeTableOfContents",
-    message: "Want to include a table of contents? Type 'yes' or 'no'.",
+    message: "Want to include a table of contents?",
     default: true,
   },
   {
     type: "input",
     name: "installation",
-    message: "What do users need to do to install this application?",
+    message: "What do users need to install this application?",
   },
   {
     type: "input",
@@ -56,7 +56,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributors",
+    name: "credits",
     message: "Any contributors to this project?",
   },
   {
@@ -68,7 +68,7 @@ const questions = [
     // ask if user wants a table of contents
     type: "confirm",
     name: "includeContactInfo",
-    message: "Want to add contact information? Type 'yes' or 'no'.",
+    message: "Want to add contact information?",
     default: true,
   },
   {

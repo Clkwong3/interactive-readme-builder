@@ -12,7 +12,12 @@ function generateReadMe(answers) {
     license,
   } = answers;
 
-  let readmeContent = `# ${title}\n\n${licenseBadge(license)}\n\n`;
+  let readmeContent = `# ${title}\n\n${licenseBadge(
+    String(license).trim()
+  )}\n\n`;
+  // added .trim() so the badge should appear
+  // String(license) to convert the value into a string so .trim() could work
+  // not toString(license)
 
   // Description
   readmeContent += "## Description\n";
