@@ -12,12 +12,11 @@ function generateReadMe(answers) {
     license,
   } = answers;
 
-  let readmeContent = `# ${title}\n\n${licenseBadge(
-    String(license).trim()
-  )}\n\n`;
-  // added .trim() so the badge should appear
-  // String(license) to convert the value into a string so .trim() could work
-  // not toString(license)
+  let licenseName = String(license).trim().replace(/\s+/g, "%20"); // replace white space with '%20
+  let badgeUrl = `https://img.shields.io/badge/License-${licenseName}-blue.svg`; // put user choice in url
+
+  // Title & License Badge
+  let readmeContent = `# ${title}\n\n![License](${badgeUrl})\n\n`;
 
   // Description
   readmeContent += "## Description\n";
