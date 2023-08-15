@@ -18,9 +18,11 @@ inquirer
       message: "Why is this project made? What does it do?",
     },
     {
-      type: "input",
-      name: "content",
-      message: "Table of Content",
+      // ask if user wants a table of contents
+      type: "confirm",
+      name: "includeTableOfContents",
+      message: "Do you want to include a table of contents?",
+      default: true,
     },
     {
       type: "input",
@@ -72,33 +74,25 @@ inquirer
       message: "Email Address:",
     },
   ])
-  .then([
-    // could be in a const
-    {
+  .then((answers) => {
+    const {
+      // could bring it outside?
       title,
-      license,
       description,
+      includeTableOfContents,
       installation,
       usage,
+      license,
       contributors,
-      git,
+      test,
+      github,
       email,
-    },
-    createReadMe(),
-  ]);
-// create a function to create the ReadMe Template
-
-// Create ReadMe using fs
-function createReadMe(fileName, data) {
-  fs.writeFile(
-    `./${fileName.toLowerCase().split("").join[""]}.md`,
-    data,
-    (err) => {
-      if (err) {
-        console.log("Error: ", err);
-      } else {
-        console.log("ReadMe has been created");
-      }
+    } = answers;
+    // Redo the function. Don't like it
+    // Create the README content based on user's choices
+    // Maybe need one for contacts?
+    let readmeContent = `# ${title}\n\n${description}\n\n`;
+    if (includeTableOfContents) {
+      readmeContent += "## Table of Contents\n\n";
     }
-  );
-}
+  });
