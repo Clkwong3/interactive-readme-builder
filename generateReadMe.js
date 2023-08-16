@@ -23,7 +23,7 @@ function generateReadMe(answers) {
   readmeContent += "## Description\n";
   readmeContent += `${description}\n\n`;
 
-  // Only include the table of contents if the user wants it (hopefully)
+  // Only include the table of contents if the user wants it
   if (includeTableOfContents) {
     // Table of Contents
     let tableOfContents = "";

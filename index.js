@@ -1,9 +1,12 @@
+// Modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path"); // the path module
+const path = require("path");
+// Script
 const generateReadMe = require("./generateReadMe");
 
 console.log("ReadMe Generator is running");
+
 // The questions
 const questions = [
   {
@@ -26,7 +29,8 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "What do users need to install this application?",
+    message:
+      "What do users need for this application? (Dependencies, Programs, APIs)",
   },
   {
     type: "input",
@@ -61,7 +65,7 @@ const questions = [
   {
     type: "input",
     name: "test",
-    message: "How can users test this application?",
+    message: "How can users test this application (instructions or commands)?",
   },
   {
     // ask if user wants a table of contents
