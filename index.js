@@ -38,7 +38,7 @@ const questions = [
     message: "What are the instructions for using this application?",
   },
   {
-    type: "list",
+    type: "checkbox",
     name: "license",
     message: "Select the license being used for this project.",
     choices: [
