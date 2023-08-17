@@ -32,7 +32,7 @@ function generateReadMe(answers) {
     tableOfContents += "- [Usage](#usage)\n";
     tableOfContents += "- [Credits](#credits)\n";
     tableOfContents += "- [Test](#test)\n";
-    tableOfContents += "- [Contact-Me](#contact-me)\n";
+    tableOfContents += "- [Contact Me](#contact-me)\n";
     tableOfContents += "- [License](#license)\n\n";
 
     readmeContent += tableOfContents;
