@@ -54,7 +54,7 @@ function generateReadMe(answers) {
   readmeContent += "## Test\n";
   readmeContent += `${test}\n\n`;
 
-  // Contact-Me Section
+  // Contact Me
   let contactSection = "";
   if (email || github) {
     contactSection += "## Contact Me\n";
