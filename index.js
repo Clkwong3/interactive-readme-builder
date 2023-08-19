@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 // Script
-const generateReadMe = require("./generateReadMe");
+const generateMarkDown = require("./generateMarkDown");
 
 console.log("ReadMe Generator is running");
 
@@ -96,29 +96,56 @@ const questions = [
   },
 ];
 
+// Write README content to a file
+function writeReadMeToFile(filePath, readmeContent) {
+  fs.writeFile(filePath, readmeContent, (err) => {
+    if (err) {
+      console.error("Error while creating README.md:", err);
+    } else {
+      console.log("README.md created successfully!");
+    }
+  });
+}
+
+// Initialize the process
 function init() {
-  // Ask and gather
+  // Ask and gather initial questions
   inquirer
     .prompt(questions)
     .then((answers) => {
-      const readmeContent = generateReadMe(answers);
+      // Ask for contributor information if needed
+      if (answers.includeCredits) {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "contributors",
+              message:
+                "Enter contributor names and links (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
+            },
+          ])
+          .then((contributorAnswers) => {
+            // Merge the contributor answers with the original answers
+            const mergedAnswers = { ...answers, ...contributorAnswers };
 
-      // Use path.join to specify where the README.md should be saved
-      // process.cwd() turns the current working directory as a string
-      const filePath = path.join(process.cwd(), "sample", "README.md");
+            // Generate README content based on merged answers
+            const readmeContent = generateMarkDown(mergedAnswers);
 
-      // Write the generated README content to a file
-      fs.writeFile(filePath, readmeContent, (err) => {
-        if (err) {
-          console.error("Error while creating README.md:", err);
-        } else {
-          console.log("README.md created successfully!");
-        }
-      });
+            // Write the generated README content to the file
+            writeReadMeToFile("sample/README.md", readmeContent);
+          });
+      } else {
+        // Generate README content based on user answers
+        const readmeContent = generateMarkDown(answers);
+
+        // Write the generated README content to the file
+        writeReadMeToFile("sample/README.md", readmeContent);
+      }
     })
     .catch((error) => {
       console.error("An error occurred:", error);
     });
 }
-// reset and start the prompts
+
+// Start the prompts
 init();

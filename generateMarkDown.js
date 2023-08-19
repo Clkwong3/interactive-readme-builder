@@ -1,5 +1,5 @@
-// Make the ReadMe based on user's answers
-function generateReadMe(answers) {
+// Take the user's answers as input and generate the content for the README
+function generateMarkDown(answers) {
   const {
     title,
     description,
@@ -87,4 +87,4 @@ function generateReadMe(answers) {
   return readmeContent;
 }
 
-module.exports = generateReadMe;
+module.exports = generateMarkDown;
