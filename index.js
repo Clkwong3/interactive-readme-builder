@@ -17,7 +17,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "Why is this project made? What does it do?",
+    message: "Why was this project developed? What is its main purpose?",
   },
   {
     // ask if user wants a table of contents
@@ -30,7 +30,7 @@ const questions = [
     type: "input",
     name: "installation",
     message:
-      "What do users need for this application? (Dependencies, Programs, APIs)",
+      "What do users need to have installed or available to use this application? This could include things like API, Dependencies, or  Packages.",
   },
   {
     type: "input",
@@ -58,9 +58,17 @@ const questions = [
     ],
   },
   {
-    type: "input",
+    type: "confirm",
     name: "credits",
     message: "Any contributors to this project?",
+    default: true,
+  },
+  {
+    type: "input",
+    name: "contributors",
+    message:
+      "Enter contributor names and links (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
+    when: (answers) => answers.includeCredits, // should only appear when users type 'y'
   },
   {
     type: "input",
