@@ -54,6 +54,18 @@ function generateReadMe(answers) {
   readmeContent += "## Test\n";
   readmeContent += `${test}\n\n`;
 
+  // Include Contributors
+  let creditSection = "";
+  if (answers.contributors.length > 0) {
+    creditSection += "## Credits\n\n";
+    creditSection += "Thanks to everyone who helped with this project: ";
+    answers.contributors.forEach((contributor) => {
+      creditSection += `- ${contributor}\n`;
+    });
+    creditSection += "\n";
+  }
+  readmeContent += creditSection;
+
   // Contact Me
   let contactSection = "";
   if (email || github) {

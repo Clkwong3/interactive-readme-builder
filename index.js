@@ -59,7 +59,7 @@ const questions = [
   },
   {
     type: "confirm",
-    name: "credits",
+    name: "includeCredits",
     message: "Any contributors to this project?",
     default: true,
   },
