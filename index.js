@@ -66,11 +66,11 @@ const questions = [
     type: "input",
     name: "contributors",
     message:
-      "Provide contributor details (e.g., 'username1, https://github.com/username1, username2, https://github.com/username2'):",
+      "Please provide contributor details (e.g., 'username1, https://github.com/username1, username2, https://github.com/username2'):",
     when: (answers) => answers.includeCredits,
   },
   {
-    // ask if user wants a table of contents
+    // ask if user wants to include their contact information
     type: "confirm",
     name: "includeContactInfo",
     message: "Want to add contact information?",
@@ -87,6 +87,20 @@ const questions = [
     name: "email",
     message: "Email Address:",
     when: (answers) => answers.includeContactInfo, // should only appear when users type 'y'
+  },
+  // ask if user have anything to link
+  {
+    type: "confirm",
+    name: "includeLinks",
+    message: "Any links to include?",
+    default: true,
+  },
+  {
+    type: "input",
+    name: "links",
+    message:
+      "Please provide the links and descriptions (e.g., 'Click here for a walkthrough:', 'https://example.com'):",
+    when: (answers) => answers.includeLinks,
   },
   {
     // ask if user wants a table of contents

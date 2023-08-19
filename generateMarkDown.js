@@ -49,7 +49,7 @@ function generateMarkDown(answers) {
   readmeContent += "## Test\n";
   readmeContent += `${test}\n\n`;
 
-  // Contributors
+  // Credits
   if (answers.includeCredits && answers.contributors) {
     const contributorDetails = answers.contributors
       .split(",")
@@ -68,6 +68,26 @@ function generateMarkDown(answers) {
     }
     creditSection += "\n";
     readmeContent += creditSection;
+  }
+
+  // Links
+  if (answers.includeLinks && answers.links) {
+    const linkDetails = answers.links.split(",").map((item) => item.trim());
+
+    let linkSection = "";
+
+    linkSection += "## Links\n\n";
+    linkSection += "Here are some useful links for this project:\n";
+
+    for (let i = 0; i < linkDetails.length; i += 3) {
+      const linkText = linkDetails[i];
+      const linkDescription = linkDetails[i + 1];
+      const linkURL = linkDetails[i + 2];
+
+      linkSection += `- [${linkText}](${linkURL}) - ${linkDescription}\n`;
+    }
+    linkSection += "\n";
+    readmeContent += linkSection;
   }
 
   // Contact Me
