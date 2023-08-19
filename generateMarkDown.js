@@ -56,7 +56,7 @@ function generateMarkDown(answers) {
 
   // Include Contributors
   let creditSection = "";
-  if (Array.isArray(answers.contributors) && answers.contributors.length > 0) {
+  if (Array.isArray(answers.contributor) && answers.contributor.length > 0) {
     creditSection += "## Credits\n\n";
     creditSection += "Thanks to everyone who helped with this project: ";
     answers.contributors.forEach((contributor) => {
