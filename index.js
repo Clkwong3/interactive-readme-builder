@@ -63,6 +63,13 @@ const questions = [
     default: true,
   },
   {
+    type: "input",
+    name: "contributors",
+    message:
+      "Provide contributor details (e.g., 'username1, https://github.com/username1, username2, https://github.com/username2'):",
+    when: (answers) => answers.includeCredits,
+  },
+  {
     // ask if user wants a table of contents
     type: "confirm",
     name: "includeContactInfo",
