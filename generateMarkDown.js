@@ -54,17 +54,17 @@ function generateMarkDown(answers) {
   readmeContent += "## Test\n";
   readmeContent += `${test}\n\n`;
 
-  // Include Contributors
-  let creditSection = "";
-  if (Array.isArray(answers.contributor) && answers.contributor.length > 0) {
+  // Contributors
+  if (Array.isArray(answers.contributors) && answers.contributors.length > 0) {
+    let creditSection = "";
     creditSection += "## Credits\n\n";
-    creditSection += "Thanks to everyone who helped with this project: ";
+    creditSection += "Thanks to everyone who helped with this project:\n";
     answers.contributors.forEach((contributor) => {
       creditSection += `- ${contributor}\n`;
     });
     creditSection += "\n";
+    readmeContent += creditSection;
   }
-  readmeContent += creditSection;
 
   // Contact Me
   let contactSection = "";

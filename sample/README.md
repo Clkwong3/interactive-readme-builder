@@ -17,7 +17,7 @@ This project will help the user keep track of time across multiple time zones
 Luxon, node.js, npm
 
 ## Usage
-Enter the city name in the search bar and hit save to display the city time in the dashboards
+Enter the city name in the search bar and hit save to display the city time in the dashboard
 
 ## Credits
 undefined
