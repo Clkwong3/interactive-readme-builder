@@ -31,6 +31,7 @@ function generateMarkDown(answers) {
     tableOfContents += "- [Usage](#usage)\n";
     tableOfContents += "- [Test](#test)\n";
     tableOfContents += "- [Credits](#credits)\n";
+    tableOfContents += "- [Links](#links)\n";
     tableOfContents += "- [Contact Me](#contact-me)\n";
     tableOfContents += "- [License](#license)\n\n";
 
