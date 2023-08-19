@@ -61,12 +61,15 @@ function generateMarkDown(answers) {
       .map((item) => item.trim());
 
     let creditSection = "";
+
     creditSection += "## Credits\n\n";
     creditSection += "Thanks to everyone who helped with this project:\n";
 
     for (let i = 0; i < contributorDetails.length; i += 2) {
       const name = contributorDetails[i];
       const link = contributorDetails[i + 1];
+
+      creditSection += `- [${name}](${link})\n`;
     }
   }
 
