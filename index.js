@@ -20,13 +20,6 @@ const questions = [
     message: "Why was this project developed? What is its main purpose?",
   },
   {
-    // ask if user wants a table of contents
-    type: "confirm",
-    name: "includeTableOfContents",
-    message: "Want to include a table of contents?",
-    default: true,
-  },
-  {
     type: "input",
     name: "installation",
     message:
@@ -36,6 +29,11 @@ const questions = [
     type: "input",
     name: "usage",
     message: "What are the instructions for using this application?",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "How can users test this application (instructions or commands)?",
   },
   {
     type: "list",
@@ -72,11 +70,6 @@ const questions = [
     when: (answers) => answers.includeCredits, // should only appear when users type 'y'
   },
   {
-    type: "input",
-    name: "test",
-    message: "How can users test this application (instructions or commands)?",
-  },
-  {
     // ask if user wants a table of contents
     type: "confirm",
     name: "includeContactInfo",
@@ -94,6 +87,13 @@ const questions = [
     name: "email",
     message: "Email Address:",
     when: (answers) => answers.includeContactInfo, // should only appear when users type 'y'
+  },
+  {
+    // ask if user wants a table of contents
+    type: "confirm",
+    name: "includeTableOfContents",
+    message: "Want to include a table of contents?",
+    default: true,
   },
 ];
 
@@ -114,34 +114,11 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      // Ask for contributor information if needed
-      if (answers.includeCredits) {
-        inquirer
-          .prompt([
-            {
-              type: "input",
-              name: "contributors",
-              message:
-                "Enter contributor name and link (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
-            },
-          ])
-          .then((contributorAnswers) => {
-            // Merge the contributor answers with the original answers
-            const mergedAnswers = { ...answers, ...contributorAnswers };
+      // Generate README content based on user answers
+      const readmeContent = generateMarkDown(answers);
 
-            // Generate README content based on merged answers
-            const readmeContent = generateMarkDown(mergedAnswers);
-
-            // Write the generated README content to the file
-            writeReadMeToFile("sample/README.md", readmeContent);
-          });
-      } else {
-        // Generate README content based on user answers
-        const readmeContent = generateMarkDown(answers);
-
-        // Write the generated README content to the file
-        writeReadMeToFile("sample/README.md", readmeContent);
-      }
+      // Write the generated README content to the file
+      writeReadMeToFile("sample/README.md", readmeContent);
     })
     .catch((error) => {
       console.error("An error occurred:", error);
