@@ -59,6 +59,10 @@ function generateMarkDown(answers) {
     const contributorDetails = answers.contributors
       .split(",")
       .map((item) => item.trim());
+
+    let creditSection = "";
+    creditSection += "## Credits\n\n";
+    creditSection += "Thanks to everyone who helped with this project:\n";
   }
 
   // Contact Me
