@@ -31,7 +31,7 @@ Clone or fetch the repository from GitHub. Install the dependencies using 'npm i
 
 Here are some useful links for this project:
 
-- Walkthrough Video: [Screencastify](https://,google.com)
+- Walkthrough Video: [Screencastify](https://drive.google.com/file/d/1l7LkSTf_XeiONkdbOwitVNZJCPAZE_Jn/view)
 
 ## Contact Me
 
