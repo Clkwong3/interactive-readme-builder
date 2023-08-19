@@ -63,18 +63,6 @@ const questions = [
     default: true,
   },
   {
-    type: "input",
-    name: "contributor",
-    message:
-      "Enter contributor name and link (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
-    when: (answers) => answers.includeCredits, // should only appear when users type 'y'
-    filter: (input) =>
-      input
-        .split("\n")
-        .map((line) => line.trim())
-        .filter((line) => line !== ""),
-  },
-  {
     // ask if user wants a table of contents
     type: "confirm",
     name: "includeContactInfo",

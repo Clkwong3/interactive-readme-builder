@@ -55,16 +55,6 @@ function generateMarkDown(answers) {
   readmeContent += `${test}\n\n`;
 
   // Contributors
-  if (Array.isArray(answers.contributors) && answers.contributors.length > 0) {
-    let creditSection = "";
-    creditSection += "## Credits\n\n";
-    creditSection += "Thanks to everyone who helped with this project:\n";
-    answers.contributors.forEach((contributor) => {
-      creditSection += `- ${contributor}\n`;
-    });
-    creditSection += "\n";
-    readmeContent += creditSection;
-  }
 
   // Contact Me
   let contactSection = "";
