@@ -39,12 +39,12 @@ Thanks to everyone who helped with this project:
 
 Here are some useful links for this project:
 
-- demo on how to use this application: [video](https://example.com)
+- Demo Video: [https://example.com](https://example.com)
 
 ## Contact Me
 
 If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](email@address.com).
-You can also reach out to me on my GitHub Account [sampleName](https://github.com/sampleName/).
+You can also reach out to me on my GitHub Account [SampleName](https://github.com/SampleName/).
 
 ## License
 
