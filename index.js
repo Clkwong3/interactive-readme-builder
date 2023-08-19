@@ -23,7 +23,7 @@ const questions = [
     type: "input",
     name: "installation",
     message:
-      "What do users need to have installed or available to use this application? This could include things like API, Dependencies, or  Packages.",
+      "What do users need to have installed or available to use this application? This could include things like API, Dependencies, or Packages.",
   },
   {
     type: "input",
@@ -64,7 +64,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributors",
+    name: "contributor",
     message:
       "Enter contributor name and link (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
     when: (answers) => answers.includeCredits, // should only appear when users type 'y'
