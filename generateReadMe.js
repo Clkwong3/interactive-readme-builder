@@ -56,7 +56,7 @@ function generateReadMe(answers) {
 
   // Include Contributors
   let creditSection = "";
-  if (answers.contributors.length > 0) {
+  if (Array.isArray(answers.contributors) && answers.contributors.length > 0) {
     creditSection += "## Credits\n\n";
     creditSection += "Thanks to everyone who helped with this project: ";
     answers.contributors.forEach((contributor) => {
