@@ -55,6 +55,8 @@ function generateMarkDown(answers) {
   readmeContent += `${test}\n\n`;
 
   // Contributors
+  if (answers.includeCredits && answers.contributors) {
+  }
 
   // Contact Me
   let contactSection = "";
