@@ -70,6 +70,13 @@ const questions = [
     when: (answers) => answers.includeCredits,
   },
   {
+    type: "input",
+    name: "links",
+    message:
+      "Please provide the links and descriptions (e.g., 'Click here for a walkthrough:, https://example.com'):",
+    when: (answers) => answers.includeLinks,
+  },
+  {
     // ask if user wants to include their contact information
     type: "confirm",
     name: "includeContactInfo",
@@ -94,13 +101,6 @@ const questions = [
     name: "includeLinks",
     message: "Any links to include?",
     default: true,
-  },
-  {
-    type: "input",
-    name: "links",
-    message:
-      "Please provide the links and descriptions (e.g., 'Click here for a walkthrough:', 'https://example.com'):",
-    when: (answers) => answers.includeLinks,
   },
   {
     // ask if user wants a table of contents
