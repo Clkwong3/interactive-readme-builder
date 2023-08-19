@@ -80,7 +80,7 @@ const questions = [
     type: "input",
     name: "links",
     message:
-      "Please provide the links and descriptions (e.g., 'Click here for a walkthrough: https://example.com'):",
+      "Please provide the links and descriptions (e.g., 'demo video, https://example.com'):",
     when: (answers) => answers.includeLinks, // should only appear when users type 'y'
   },
   {

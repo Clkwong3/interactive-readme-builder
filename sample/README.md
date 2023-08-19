@@ -12,6 +12,7 @@ This project will help the user keep track of time across multiple time zones
 - [Usage](#usage)
 - [Test](#test)
 - [Credits](#credits)
+- [Links](#links)
 - [Contact Me](#contact-me)
 - [License](#license)
 
@@ -31,13 +32,19 @@ Fork the code from GitHub and run 'npm test' in the terminal to check for errors
 
 Thanks to everyone who helped with this project:
 
-- [johndoe](https://github.com/johndoe)
-- [frank4Vance](https://github.com/frank4Vance)
+- [johnDeo](https:github/johnDeo)
+- [frankFurt](https://github.com/frankFurt)
+
+## Links
+
+Here are some useful links for this project:
+
+- demo on how to use this application: [video](https://example.com)
 
 ## Contact Me
 
 If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](email@address.com).
-You can also reach out to me on my GitHub Account [SampleName](https://github.com/SampleName/).
+You can also reach out to me on my GitHub Account [sampleName](https://github.com/sampleName/).
 
 ## License
 

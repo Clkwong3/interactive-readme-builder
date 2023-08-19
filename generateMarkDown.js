@@ -80,12 +80,11 @@ function generateMarkDown(answers) {
     linkSection += "## Links\n\n";
     linkSection += "Here are some useful links for this project:\n";
 
-    for (let i = 0; i < linkDetails.length; i += 3) {
-      const linkText = linkDetails[i];
-      const linkDescription = linkDetails[i + 1];
-      const linkURL = linkDetails[i + 2];
+    for (let i = 0; i < linkDetails.length; i += 2) {
+      const linkDescription = linkDetails[i];
+      const linkURL = linkDetails[i + 1];
 
-      linkSection += `- [${linkText}](${linkURL}) - ${linkDescription}\n`;
+      linkSection += `- ${linkDescription}: [${linkURL}](${linkURL})\n`;
     }
     linkSection += "\n";
     readmeContent += linkSection;
