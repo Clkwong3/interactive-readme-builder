@@ -1,4 +1,4 @@
-// Take the user's answers as input and generate the content for the README
+// Generate README content based on user answers
 function generateMarkDown(answers) {
   const {
     title,

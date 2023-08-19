@@ -1,13 +1,13 @@
 // Modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path");
+
 // Script
 const generateMarkDown = require("./generateMarkDown");
 
 console.log("ReadMe Generator is running");
 
-// The questions
+// The questions to gather user input
 const questions = [
   {
     type: "input",
@@ -58,6 +58,7 @@ const questions = [
     ],
   },
   {
+    // ask if user had contributors
     type: "confirm",
     name: "includeCredits",
     message: "Any contributors to this project?",
@@ -67,7 +68,7 @@ const questions = [
     type: "input",
     name: "contributors",
     message:
-      "Enter contributor names and links (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
+      "Enter contributor name and link (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
     when: (answers) => answers.includeCredits, // should only appear when users type 'y'
   },
   {
@@ -121,7 +122,7 @@ function init() {
               type: "input",
               name: "contributors",
               message:
-                "Enter contributor names and links (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
+                "Enter contributor name and link (e.g., 'John Doe: [GitHub](https://github.com/johndoe)')",
             },
           ])
           .then((contributorAnswers) => {
