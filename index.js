@@ -3,8 +3,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // Script
-const generateMarkDown = require("./lib/generateMarkDown");
-const questions = require("./lib/questions");
+const generateMarkDown = require("./lib/generateMarkDown.js");
+const questions = require("./lib/questions.js");
 
 console.log("ReadMe Generator is running");
 
@@ -29,7 +29,7 @@ function init() {
       const readmeContent = generateMarkDown(answers);
 
       // Write the generated README content to the file
-      writeReadMeToFile("sample/README.md", readmeContent);
+      writeReadMeToFile("README.md", readmeContent);
     })
     .catch((error) => {
       console.error("An error occurred:", error);

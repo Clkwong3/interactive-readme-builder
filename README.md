@@ -10,9 +10,10 @@ This code was designed to make it easy for users to create a README for software
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [Test](#test)
-- [Contact-Me](#contact-me)
+- [Credits](#credits)
+- [Links](#links)
+- [Contact Me](#contact-me)
 - [License](#license)
 
 ## Installation
@@ -23,18 +24,14 @@ Inquirer 8.2.4 and Node.js
 
 Install the dependencies. Run the script. Answer the questions when prompt. Review, edit, and use the ReadMe.
 
-## Credits
-
-N/A
-
 ## Test
 
 Clone or fetch the repository from GitHub. Install the dependencies using 'npm install'. Run 'npm test' to verify that there are no errors. Use the application by following the instructions provided in the ReadMe.
 
-## Contact-Me
+## Contact Me
 
 If you encounter any issues, please report them on the project's GitHub repository or contact me via [email](email@address.com).
-You can also reach out to me on my GitHub Account [Clkwong3](https://github.com/Clkwong3).
+You can also reach out to me on my GitHub Account [Clkwong3](https://github.com/Clkwong3/).
 
 ## License
 
