@@ -56,6 +56,9 @@ function generateMarkDown(answers) {
 
   // Contributors
   if (answers.includeCredits && answers.contributors) {
+    const contributorDetails = answers.contributors
+      .split(",")
+      .map((item) => item.trim());
   }
 
   // Contact Me
