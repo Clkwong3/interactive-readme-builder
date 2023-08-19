@@ -30,8 +30,8 @@ function generateMarkDown(answers) {
     tableOfContents += "## Table of Contents\n";
     tableOfContents += "- [Installation](#installation)\n";
     tableOfContents += "- [Usage](#usage)\n";
-    tableOfContents += "- [Credits](#credits)\n";
     tableOfContents += "- [Test](#test)\n";
+    tableOfContents += "- [Credits](#credits)\n";
     tableOfContents += "- [Contact Me](#contact-me)\n";
     tableOfContents += "- [License](#license)\n\n";
 
@@ -45,10 +45,6 @@ function generateMarkDown(answers) {
   // Usage
   readmeContent += "## Usage\n";
   readmeContent += `${usage}\n\n`;
-
-  // Credits
-  readmeContent += "## Credits\n";
-  readmeContent += `${credits}\n\n`;
 
   // Test
   readmeContent += "## Test\n";
