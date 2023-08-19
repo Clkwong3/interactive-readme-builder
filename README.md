@@ -11,7 +11,6 @@ This code was designed to make it easy for users to create a README for software
 - [Installation](#installation)
 - [Usage](#usage)
 - [Test](#test)
-- [Credits](#credits)
 - [Links](#links)
 - [Contact Me](#contact-me)
 - [License](#license)
@@ -27,6 +26,12 @@ Install the dependencies. Run the script. Answer the questions when prompt. Revi
 ## Test
 
 Clone or fetch the repository from GitHub. Install the dependencies using 'npm install'. Run 'npm test' to verify that there are no errors. Use the application by following the instructions provided in the ReadMe.
+
+## Links
+
+Here are some useful links for this project:
+
+- Demo Video: [https://example.com](https://example.com)
 
 ## Contact Me
 
