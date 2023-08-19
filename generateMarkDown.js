@@ -71,6 +71,8 @@ function generateMarkDown(answers) {
 
       creditSection += `- [${name}](${link})\n`;
     }
+    creditSection += "\n";
+    readmeContent += creditSection;
   }
 
   // Contact Me
