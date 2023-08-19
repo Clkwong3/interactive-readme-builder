@@ -5,7 +5,6 @@ function generateMarkDown(answers) {
     description,
     installation,
     usage,
-    credits,
     test,
     github,
     email,
