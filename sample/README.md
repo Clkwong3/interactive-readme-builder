@@ -40,13 +40,13 @@ Thanks to everyone who helped with this project:
 Here are some useful links for this project:
 
 - Demo Video: [placeholder](https://example.com)
+- Starter Code: [example](https://github.com/example)
 
 ## Contact-Me
 
 If you encounter any issues, please report them on the project's GitHub repository.
 
 You can reach out to me via [email](email@address.com).
-
 You can also connect with me on [GitHub](https://github.com/SampleName).
 
 ## License
