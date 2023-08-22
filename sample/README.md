@@ -1,6 +1,6 @@
 # Digital Clock
 
-![License](https://img.shields.io/badge/License-Apache 2.0-blue.svg)
+![License](https://img.shields.io/badge/License-Boost 1.0-blue.svg)
 
 ## Description
 
@@ -32,10 +32,8 @@ Fork or clone the code from GitHub and run 'npm test' in the terminal to check f
 
 Thanks to everyone who helped with this project:
 
-- [johnDeo](undefined)
-- [https://github.com/johnDeo](undefined)
-- [tankFurt](undefined)
-- [https://github.com/tankFurt](undefined)
+- [johnDeo](https://github.com/johnDeo)
+- [tankFurt](https://github.com/tankFurt)
 
 ## Contact-Me
 
@@ -47,4 +45,4 @@ You can also connect with me on [GitHub](https://github.com/SampleName).
 
 ## License
 
-All rights reserved. Licensed under the Apache 2.0 license.
+All rights reserved. Licensed under the Boost 1.0 license.
