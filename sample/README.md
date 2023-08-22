@@ -39,9 +39,7 @@ Thanks to everyone who helped with this project:
 
 Here are some useful links for this project:
 
-- Demo Video: [undefined](undefined)
-- placeholder: [undefined](undefined)
-- https://example.com: [undefined](undefined)
+- Demo Video: [placeholder](https://example.com)
 
 ## Contact-Me
 
