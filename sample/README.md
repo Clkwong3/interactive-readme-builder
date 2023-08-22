@@ -1,6 +1,6 @@
 # Digital Clock
 
-![License](https://img.shields.io/badge/License-Boost 1.0-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Description
 
@@ -35,6 +35,14 @@ Thanks to everyone who helped with this project:
 - [johnDeo](https://github.com/johnDeo)
 - [tankFurt](https://github.com/tankFurt)
 
+## Links
+
+Here are some useful links for this project:
+
+- Demo Video: [undefined](undefined)
+- placeholder: [undefined](undefined)
+- https://example.com: [undefined](undefined)
+
 ## Contact-Me
 
 If you encounter any issues, please report them on the project's GitHub repository.
@@ -45,4 +53,4 @@ You can also connect with me on [GitHub](https://github.com/SampleName).
 
 ## License
 
-All rights reserved. Licensed under the Boost 1.0 license.
+All rights reserved. Licensed under the MIT license.
