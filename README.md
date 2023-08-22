@@ -31,7 +31,7 @@ Clone or fetch the repository from GitHub. Install the dependencies using 'npm i
 
 Here are some useful links for this project:
 
-- Starter Code: [Potential-enigma] (https://github.com/coding-boot-camp/potential-enigma)
+- Starter Code: [Potential-Enigma](https://github.com/coding-boot-camp/potential-enigma)
 - Walkthrough Video: [Screencastify](https://drive.google.com/file/d/1l7LkSTf_XeiONkdbOwitVNZJCPAZE_Jn/view)
 
 ## Contact Me
