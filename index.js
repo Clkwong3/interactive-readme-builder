@@ -29,7 +29,7 @@ function init() {
       const readmeContent = generateMarkDown(answers);
 
       // Write the generated README content to the file
-      writeReadMeToFile("sample/README.md", readmeContent);
+      writeReadMeToFile("project/README.md", readmeContent);
     })
     .catch((error) => {
       console.error("An error occurred:", error);
