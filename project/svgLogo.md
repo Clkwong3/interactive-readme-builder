@@ -1,7 +1,5 @@
 # svg-logo-maker
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-
 ## Description
 
 This project allows users to design and create customizable SVG logos in the form of circles, triangles, or squares.
@@ -12,8 +10,7 @@ This project allows users to design and create customizable SVG logos in the for
 - [Usage](#usage)
 - [Test](#test)
 - [Links](#links)
-- [Contact-Me](#contact-me)
-- [License](#license)
+- [Contact Me](#contact-me)
 
 ## Installation
 
@@ -48,10 +45,6 @@ Here are some useful links for this project:
 
 ## Contact-Me
 
-If you encounter any issues, please report them on the project's [GitHub repository](https://github.com/Clkwong3/svg-logo-maker/issues/new).
+If you encounter any issues, please report them on the project's [GitHub repository](https://github.com/Clkwong3/svg-logo-maker).
 
 You can also connect with me on [GitHub](https://github.com/Clkwong3).
-
-## License
-
-All rights reserved. Licensed under the MIT license.
