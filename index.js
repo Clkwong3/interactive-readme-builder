@@ -1,8 +1,8 @@
 // Modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateReadMe = require("./generateReadMe"); // Generating README content
-const questions = require("./questions"); // List of questions
+const generateReadMe = require("./lib/generateMarkDown"); // Generating README content
+const questions = require("./lib/questions"); // List of questions
 
 console.log("ReadMe Generator is running");
 
