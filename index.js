@@ -1,12 +1,27 @@
 // Modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-
-// Script
-const generateMarkDown = require("./lib/generateMarkDown.js");
-const questions = require("./lib/questions.js");
+const generateReadMe = require("./generateReadMe"); // Generating README content
+const questions = require("./questions"); // List of questions
 
 console.log("ReadMe Generator is running");
+
+// Initialize the process
+function init() {
+  // Ask and gather questions using Inquirer
+  inquirer
+    .prompt(questions) // Prompt the user with the questions defined in questions.js
+    .then((answers) => {
+      // Generate README content based on user answers
+      const readmeContent = generateReadMe(answers);
+
+      // Write the generated README content to the file
+      writeReadMeToFile("project/README.md", readmeContent);
+    })
+    .catch((error) => {
+      console.error("An error occurred:", error);
+    });
+}
 
 // Write README content to a file
 function writeReadMeToFile(filePath, readmeContent) {
@@ -19,22 +34,5 @@ function writeReadMeToFile(filePath, readmeContent) {
   });
 }
 
-// Initialize the process
-function init() {
-  // Ask and gather initial questions
-  inquirer
-    .prompt(questions)
-    .then((answers) => {
-      // Generate README content based on user answers
-      const readmeContent = generateMarkDown(answers);
-
-      // Write the generated README content to the file
-      writeReadMeToFile("project/README.md", readmeContent);
-    })
-    .catch((error) => {
-      console.error("An error occurred:", error);
-    });
-}
-
-// Start the prompts
+// Start the prompts by calling the init() function
 init();
